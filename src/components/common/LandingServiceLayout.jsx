@@ -54,7 +54,7 @@ export default function LandingServiceLayout({
           </div>
 
           <div className="lg:col-span-5">
-            <div className="sticky top-28">
+            <div className="sticky top-36 sm:top-32">
               <ContactForm
                 heading="Contact Us Now"
                 description="Fill in your details for a free, confidential consultation with Master Alex."

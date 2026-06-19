@@ -8,7 +8,7 @@ function PhoneIcon({ className = 'h-4 w-4 shrink-0' }) {
   )
 }
 
-function WhatsAppIcon({ className = 'h-4 w-4 shrink-0' }) {
+function WhatsAppIcon({ className = 'h-5 w-5 shrink-0' }) {
   return (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -19,7 +19,7 @@ function WhatsAppIcon({ className = 'h-4 w-4 shrink-0' }) {
 export { PhoneIcon, WhatsAppIcon }
 
 const base =
-  'btn-touch inline-flex w-full sm:w-auto flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 rounded-2xl text-center text-sm font-semibold transition-all duration-300 active:scale-[0.98] sm:text-base'
+  'btn-touch inline-flex w-full sm:w-auto flex-row flex-nowrap items-center justify-center gap-2 rounded-2xl text-center text-xs font-semibold transition-all duration-300 active:scale-[0.98] sm:text-base'
 
 export function CallButton({ className = '', compact = false, variant = 'primary' }) {
   const styles = {
@@ -33,17 +33,15 @@ export function CallButton({ className = '', compact = false, variant = 'primary
 
   return (
     <a href={SITE.phoneLink} className={`${base} ${styles[variant]} ${sizeClass} ${className}`}>
-      <span className="inline-flex items-center justify-center gap-2">
-        <PhoneIcon />
-        {!compact && (
-          <>
-            <span className="sm:hidden">Call Now</span>
-            <span className="hidden sm:inline">Call {SITE.name}</span>
-          </>
-        )}
-        {compact && <span>Call</span>}
-      </span>
-      {!compact && <span className="font-bold leading-tight">{SITE.phone}</span>}
+      <PhoneIcon />
+      {!compact && (
+        <>
+          <span className="sm:hidden">Call Now</span>
+          <span className="hidden sm:inline">Call {SITE.name}</span>
+          <span className="font-bold leading-tight">{SITE.phone}</span>
+        </>
+      )}
+      {compact && <span>Call</span>}
     </a>
   )
 }
@@ -58,8 +56,8 @@ export function WhatsAppButton({ className = '', compact = false }) {
       rel="noopener noreferrer"
       className={`${base} border border-master-whatsapp/30 bg-master-whatsapp/10 text-master-whatsapp hover:bg-master-whatsapp hover:text-white ${sizeClass} ${className}`}
     >
-      <WhatsAppIcon />
-      WhatsApp
+      <WhatsAppIcon className="h-6 w-6" />
+      <span>WhatsApp</span>
     </a>
   )
 }

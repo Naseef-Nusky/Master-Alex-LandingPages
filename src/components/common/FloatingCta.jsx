@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { SITE } from '../../constants/siteData'
+import { WhatsAppIcon } from './Buttons'
 
 export default function FloatingCta() {
   const [visible, setVisible] = useState(false)
@@ -38,9 +39,10 @@ export default function FloatingCta() {
           href={SITE.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-touch flex min-h-[48px] flex-1 items-center justify-center rounded-xl bg-master-whatsapp text-sm font-bold text-white"
+          className="btn-touch flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-xl bg-master-whatsapp text-sm font-bold text-white"
           tabIndex={visible ? 0 : -1}
         >
+          <WhatsAppIcon className="h-6 w-6" />
           WhatsApp
         </a>
       </div>

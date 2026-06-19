@@ -16,7 +16,7 @@ export default function PageBanner({ title, subtitle }) {
   }
 
   return (
-    <section className="relative min-h-screen overflow-hidden pt-24 pb-16 lg:pt-28">
+    <section className="relative min-h-screen overflow-hidden pt-36 pb-16 sm:pt-32 lg:pt-32">
       <img
         src={HERO_BG_IMAGE}
         alt=""
