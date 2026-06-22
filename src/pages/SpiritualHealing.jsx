@@ -4,17 +4,17 @@ export default function SpiritualHealing() {
   return (
     <LandingServiceLayout
       title="Spiritual Healing"
-      subtitle="Trusted spiritual healer in London. Master Alex offers energy healing and spiritual cleansing to restore peace, strength, and balance."
+      subtitle="Trusted spiritual healer in the UK. Master Alex offers energy healing and spiritual cleansing to restore peace, strength, and balance."
       serviceSlug="spiritual-healing"
       serviceImage="/spiritual-healing.png"
       intro={[
         {
-          heading: 'Find Peace and Balance Through Energy Healing and Spiritual Cleansing in London',
-          text: "Do you feel confused, drained, or overwhelmed by events in your life without knowing why? A negative mindset can deeply affect how life unfolds in today's fast-paced world. That's why surrounding yourself with positive energy matters, and Master Alex, a trusted spiritual healer in London, can help. Through spiritual healing and energy cleansing, he helps people across London overcome emotional pain, refocus on their goals, and find happiness even during difficult times. His healing methods restore natural energy flow, bringing back peace, strength, and balance. Book your appointment today and find inner peace again.",
+          heading: 'Find Peace and Balance Through Energy Healing and Spiritual Cleansing in the UK',
+          text: "Do you feel confused, drained, or overwhelmed by events in your life without knowing why? A negative mindset can deeply affect how life unfolds in today's fast-paced world. That's why surrounding yourself with positive energy matters, and Master Alex, a trusted spiritual healer in the UK, can help. Through spiritual healing and energy cleansing, he helps people across the UK overcome emotional pain, refocus on their goals, and find happiness even during difficult times. His healing methods restore natural energy flow, bringing back peace, strength, and balance. Book your appointment today and find inner peace again.",
         },
         {
           heading: 'Understanding Spiritual Healing',
-          text: 'Spiritual healing is a process led by Master Alex to bring your body, mind, and spirit into harmony and clear negative energy. With years of experience as a spiritual healer in London, he uses traditional energy practices and prayers to release emotional burdens and nurture positive growth. Learn more about Master Alex to discover his background and astrological expertise.',
+          text: 'Spiritual healing is a process led by Master Alex to bring your body, mind, and spirit into harmony and clear negative energy. With years of experience as a spiritual healer in the UK, he uses traditional energy practices and prayers to release emotional burdens and nurture positive growth. Learn more about Master Alex to discover his background and astrological expertise.',
         },
       ]}
       sections={[
@@ -29,7 +29,7 @@ export default function SpiritualHealing() {
             'A deeper spiritual connection',
           ],
           afterText:
-            'Why Choose an Energy Healer in London? Master Alex is an experienced energy healer in London offering both in-person and remote sessions. His approach combines timeless spiritual wisdom with practical support for modern life. If you face emotional pain, relationship strain, or mental exhaustion, his healing restores inner strength and purifies your energy field. If you often feel surrounded by negativity or persistent fatigue, you may also benefit from his negative energy removal services for deeper spiritual cleansing.',
+            'Why Choose an Energy Healer in the UK? Master Alex is an experienced energy healer in the UK offering both in-person and remote sessions. His approach combines timeless spiritual wisdom with practical support for modern life. If you face emotional pain, relationship strain, or mental exhaustion, his healing restores inner strength and purifies your energy field. If you often feel surrounded by negativity or persistent fatigue, you may also benefit from his negative energy removal services for deeper spiritual cleansing.',
           cta: 'call',
         },
         {

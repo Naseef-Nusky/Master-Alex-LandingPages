@@ -14,57 +14,57 @@ export const LANDING_PAGES = [
   {
     slug: 'black-magic-removal',
     path: '/black-magic-removal',
-    title: 'Black Magic Removal London | Master Alex',
+    title: 'Black Magic Removal UK | Master Alex',
     description:
-      'Expert black magic removal in London. Restore peace, protection, and control of your life with Master Alex.',
+      'Expert black magic removal in the UK. Restore peace, protection, and control of your life with Master Alex.',
     component: BlackMagicRemoval,
   },
   {
     slug: 'get-ex-love-back',
     path: '/get-ex-love-back',
-    title: 'Get Ex Love Back London | Master Alex',
+    title: 'Get Ex Love Back UK | Master Alex',
     description:
-      "Reconnect with true love through London's trusted love back expert. Master Alex helps you rebuild your relationship and bring your ex back.",
+      "Reconnect with true love through UK's trusted love back expert. Master Alex helps you rebuild your relationship and bring your ex back.",
     component: GetExLoveBack,
   },
   {
     slug: 'husband-wife-problems',
     path: '/husband-wife-problems',
-    title: 'Husband & Wife Problem Solutions London | Master Alex',
+    title: 'Husband & Wife Problem Solutions UK | Master Alex',
     description:
-      'Trusted husband and wife problem solutions in London. Master Alex helps couples restore love, trust, and harmony in their marriage.',
+      'Trusted husband and wife problem solutions in the UK. Master Alex helps couples restore love, trust, and harmony in their marriage.',
     component: HusbandWifeProblems,
   },
   {
     slug: 'negative-energy-removal',
     path: '/negative-energy-removal',
-    title: 'Negative Energy Removal London | Master Alex',
+    title: 'Negative Energy Removal UK | Master Alex',
     description:
-      'Powerful negative energy removal in London. Master Alex helps you restore balance, peace, and positive energy in your life.',
+      'Powerful negative energy removal in the UK. Master Alex helps you restore balance, peace, and positive energy in your life.',
     component: NegativeEnergyRemoval,
   },
   {
     slug: 'psychic-reading',
     path: '/psychic-reading',
-    title: 'Psychic Reading London | Master Alex',
+    title: 'Psychic Reading UK | Master Alex',
     description:
-      'Trusted psychic readings in London. Master Alex offers clear insights into love, career, relationships, and your life path.',
+      'Trusted psychic readings in the UK. Master Alex offers clear insights into love, career, relationships, and your life path.',
     component: PsychicReading,
   },
   {
     slug: 'love-spell-caster',
     path: '/love-spell-caster',
-    title: 'Love Spell Caster London | Master Alex',
+    title: 'Love Spell Caster UK | Master Alex',
     description:
-      'Trusted love spell caster in London. Master Alex helps rebuild affection, restore trust, and bring back lost love.',
+      'Trusted love spell caster in the UK. Master Alex helps rebuild affection, restore trust, and bring back lost love.',
     component: LoveSpellCaster,
   },
   {
     slug: 'spiritual-healing',
     path: '/spiritual-healing',
-    title: 'Spiritual Healing London | Master Alex',
+    title: 'Spiritual Healing UK | Master Alex',
     description:
-      'Trusted spiritual healer in London. Master Alex offers energy healing and spiritual cleansing to restore peace and balance.',
+      'Trusted spiritual healer in the UK. Master Alex offers energy healing and spiritual cleansing to restore peace and balance.',
     component: SpiritualHealing,
   },
 ]

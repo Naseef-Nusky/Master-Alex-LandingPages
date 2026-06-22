@@ -17,7 +17,7 @@ export default function LandingFooter() {
               />
             </a>
             <p className="text-sm leading-relaxed text-white/55 sm:text-base">
-              Trusted spiritual guidance and astrology services in London.
+              Trusted spiritual guidance and astrology services in the UK.
             </p>
           </div>
 

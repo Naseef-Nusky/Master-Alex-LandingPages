@@ -4,7 +4,7 @@ export const SITE = {
   phoneLink: 'tel:+442012345678',
   whatsappLink: 'https://wa.me/442012345678',
   email: 'info@masteralex.com',
-  address: '123 Spiritual Way, London, UK',
+  address: '123 Spiritual Way, UK',
 }
 
 export const LOGO = '/logo-removebg.png'
@@ -59,12 +59,12 @@ export const BANNER_IMAGES = {
 export const TESTIMONIALS = [
   {
     name: 'Nova',
-    location: 'London, UK',
+    location: 'UK',
     text: 'I consulted Master Alex during a difficult phase and his black magic removal guidance was truly transformative. His insights were accurate, and the remedies brought peace, clarity, and positive changes to my life.',
   },
   {
     name: 'Maria',
-    location: 'London, UK',
+    location: 'UK',
     text: "Master Alex's spiritual healing lifted me out of depression and anxiety. After his black magic removal sessions, I felt protected again and my home finally felt calm. I highly recommend his services.",
   },
   {

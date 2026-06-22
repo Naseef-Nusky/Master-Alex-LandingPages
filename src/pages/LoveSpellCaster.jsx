@@ -4,17 +4,17 @@ export default function LoveSpellCaster() {
   return (
     <LandingServiceLayout
       title="Love Spell Caster"
-      subtitle="Trusted love spell caster in London. Master Alex helps rebuild affection, restore trust, and bring back lost love."
+      subtitle="Trusted love spell caster in the UK. Master Alex helps rebuild affection, restore trust, and bring back lost love."
       serviceSlug="love-spell-caster"
       serviceImage="/love-spell-caster.png"
       intro={[
         {
-          heading: 'Rediscover True Love with a Trusted Love Spell Caster in London',
-          text: 'When misunderstandings grow, love can slowly drift apart, leaving confusion and pain behind. Master Alex, a respected love spell caster in London, helps people rebuild genuine affection and emotional peace. His ancient love rituals help create positive change in relationships, restore trust, and bring back lost love. One call to Master Alex can help you find hope again with powerful love spells in London. Book your appointment today.',
+          heading: 'Rediscover True Love with a Trusted Love Spell Caster in the UK',
+          text: 'When misunderstandings grow, love can slowly drift apart, leaving confusion and pain behind. Master Alex, a respected love spell caster in the UK, helps people rebuild genuine affection and emotional peace. His ancient love rituals help create positive change in relationships, restore trust, and bring back lost love. One call to Master Alex can help you find hope again with powerful love spells in the UK. Book your appointment today.',
         },
         {
           heading: 'Understanding How Love Spells Work',
-          text: 'Love spells use spiritual energy to attract love, heal broken bonds, or strengthen existing connections. As an experienced love spell specialist in London, Master Alex carefully reviews your situation before performing the rituals best suited to your needs. Each spell is cast with pure intention to align you with the energy of love and clarity. Learn more about Master Alex to discover his background and the depth of his love spell practice.',
+          text: 'Love spells use spiritual energy to attract love, heal broken bonds, or strengthen existing connections. As an experienced love spell specialist in the UK, Master Alex carefully reviews your situation before performing the rituals best suited to your needs. Each spell is cast with pure intention to align you with the energy of love and clarity. Learn more about Master Alex to discover his background and the depth of his love spell practice.',
         },
       ]}
       sections={[
@@ -34,8 +34,8 @@ export default function LoveSpellCaster() {
         },
         {
           bg: 'white',
-          heading: 'Why Trust a Love Spell Specialist in London?',
-          text: 'Clients across London trust Master Alex because his work is safe, confidential, and effective. As a skilled love spell specialist in London, he helps couples address deep emotional issues and find peace again. His approach focuses on balance, communication, and understanding, not just magic. If your marriage feels strained, he also offers spiritual counselling and specialized rituals to support husband and wife problems and restore harmony at home.',
+          heading: 'Why Trust a Love Spell Specialist in the UK?',
+          text: 'Clients across the UK trust Master Alex because his work is safe, confidential, and effective. As a skilled love spell specialist in the UK, he helps couples address deep emotional issues and find peace again. His approach focuses on balance, communication, and understanding, not just magic. If your marriage feels strained, he also offers spiritual counselling and specialized rituals to support husband and wife problems and restore harmony at home.',
           cta: 'call',
         },
         {
@@ -46,8 +46,8 @@ export default function LoveSpellCaster() {
         },
         {
           bg: 'dark',
-          heading: 'Book a Session with a Love Spell Caster in London',
-          text: "If heartbreak, doubt, or relationship struggles are weighing on you, reach out to Master Alex, one of London's most trusted love spell casters. His honest guidance and spiritual methods have helped many couples find real, lasting love. Schedule your session today.",
+          heading: 'Book a Session with a Love Spell Caster in the UK',
+          text: "If heartbreak, doubt, or relationship struggles are weighing on you, reach out to Master Alex, one of UK's most trusted love spell casters. His honest guidance and spiritual methods have helped many couples find real, lasting love. Schedule your session today.",
           cta: 'call',
           image: true,
           imageSrc: '/love-spell-caster.png',

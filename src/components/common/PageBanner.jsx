@@ -27,7 +27,7 @@ export default function PageBanner({ title, subtitle, serviceSlug }) {
         <div className="hero-content hero-content-dark animate-fade-up max-w-2xl">
           <div className="mb-6 flex flex-wrap gap-2">
             <span className="section-eyebrow border border-master-gold/35 bg-master-gold/15 font-bold text-master-gold-light">
-              London&apos;s Trusted Expert
+              UK&apos;s Trusted Expert
             </span>
             <span className="section-eyebrow border border-white/20 bg-white/10 font-semibold text-white/85">
               24/7 Available
