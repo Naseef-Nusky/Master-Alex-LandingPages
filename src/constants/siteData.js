@@ -11,18 +11,49 @@ export const LOGO = '/logo-removebg.png'
 export const BG_IMAGE = '/bg-img.png'
 export const HERO_BG_IMAGE = '/hero-bgnew.png'
 
+export const HERO_BG_IMAGES = {
+  'get-ex-love-back': '/herobanner-get-ex-love-back.png',
+  'husband-wife-problems': '/husband-bannerbg-wife-problems.png',
+  'love-spell-caster': '/bannerbg-love-spell-caster.png',
+  'negative-energy-removal': '/bannerbg-negative-energy-removal.png',
+  'psychic-reading': '/herobg-psychic-reading.png',
+  'spiritual-healing': '/bannerbg-spiritual-healing.png',
+}
+
+/** Hero h1 — always two lines: gold line 1, white line 2 */
+export const HERO_TITLES = {
+  'black-magic-removal': { line1: 'Black Magic', line2: 'Removal' },
+  'get-ex-love-back': { line1: 'Get Your Ex', line2: 'Love Back' },
+  'husband-wife-problems': { line1: 'Husband & Wife', line2: 'Problem Solutions' },
+  'negative-energy-removal': { line1: 'Negative Energy', line2: 'Removal' },
+  'psychic-reading': { line1: 'Psychic', line2: 'Reading' },
+  'love-spell-caster': { line1: 'Love Spell', line2: 'Caster' },
+  'spiritual-healing': { line1: 'Spiritual', line2: 'Healing' },
+}
+
+/** Mobile hero crop focus — shifts visible area on all landing pages */
+export const HERO_BG_MOBILE_POSITION = {
+  default: '75% center',
+}
+
 export const SERVICE_LINKS = [
-  { label: 'Black Magic Removal', image: '/black-magic-removal.png', href: '#top' },
-  { label: 'Get Ex Love Back', image: '/get-ex-love-back.png', href: '#contact' },
-  { label: 'Husband & Wife Problem Solutions', image: '/husband-wife-problems.png', href: '#contact' },
-  { label: 'Negative Energy Removal', image: '/negative-energy-removal.png', href: '#contact' },
-  { label: 'Psychic Reading', image: '/psychic-reading.png', href: '#contact' },
-  { label: 'Love Spell Caster', image: '/love-spell-caster.png', href: '#contact' },
-  { label: 'Spiritual Healing', image: '/spiritual-healing.png', href: '#contact' },
+  { label: 'Black Magic Removal', image: '/black-magic-removal.png', href: '/black-magic-removal' },
+  { label: 'Get Ex Love Back', image: '/get-ex-love-back.png', href: '/get-ex-love-back' },
+  { label: 'Husband & Wife Problem Solutions', image: '/husband-wife-problems.png', href: '/husband-wife-problems' },
+  { label: 'Negative Energy Removal', image: '/negative-energy-removal.png', href: '/negative-energy-removal' },
+  { label: 'Psychic Reading', image: '/psychic-reading.png', href: '/psychic-reading' },
+  { label: 'Love Spell Caster', image: '/love-spell-caster.png', href: '/love-spell-caster' },
+  { label: 'Spiritual Healing', image: '/spiritual-healing.png', href: '/spiritual-healing' },
 ]
 
 export const BANNER_IMAGES = {
   'black-magic-removal': '/banner-blackmagicremoval.png',
+  'get-ex-love-back': '/get-ex-love-back.png',
+  'husband-wife-problems': '/husband-wife-problems.png',
+  'negative-energy-removal': '/negative-energy-removal.png',
+  'psychic-reading': '/psychic-reading.png',
+  'love-spell-caster': '/love-spell-caster.png',
+  'spiritual-healing': '/spiritual-healing.png',
 }
 
 export const TESTIMONIALS = [

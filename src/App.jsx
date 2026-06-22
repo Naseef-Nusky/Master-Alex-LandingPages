@@ -1,6 +1,9 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import PageMeta from './components/common/PageMeta'
+import ScrollToTop from './components/common/ScrollToTop'
 import { DEFAULT_LANDING_PATH, LANDING_PAGES } from './constants/landingPages'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsConditions from './pages/TermsConditions'
 
 function LandingPageEntry({ page }) {
   const Page = page.component
@@ -16,6 +19,7 @@ function LandingPageEntry({ page }) {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navigate to={DEFAULT_LANDING_PATH} replace />} />
         {LANDING_PAGES.map((page) => (
@@ -25,6 +29,8 @@ export default function App() {
             element={<LandingPageEntry page={page} />}
           />
         ))}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsConditions />} />
         <Route path="*" element={<Navigate to={DEFAULT_LANDING_PATH} replace />} />
       </Routes>
     </BrowserRouter>

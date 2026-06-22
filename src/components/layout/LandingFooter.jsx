@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { SITE, LOGO } from '../../constants/siteData'
 
 export default function LandingFooter() {
@@ -68,9 +69,25 @@ export default function LandingFooter() {
       </div>
 
       <div className="border-t border-white/10">
-        <p className="px-4 py-4 text-center text-[11px] leading-relaxed text-white/30 sm:py-5 sm:text-xs">
-          &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
-        </p>
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-4 sm:flex-row sm:py-5">
+          <p className="text-center text-[11px] leading-relaxed text-white/30 sm:text-left sm:text-xs">
+            &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
+          </p>
+          <div className="flex items-center justify-center gap-4 sm:gap-6">
+            <Link
+              to="/privacy-policy"
+              className="shrink-0 whitespace-nowrap text-[11px] text-white/40 transition hover:text-white/70 sm:text-xs"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms-and-conditions"
+              className="shrink-0 whitespace-nowrap text-[11px] text-white/40 transition hover:text-white/70 sm:text-xs"
+            >
+              Terms &amp; Conditions
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   )

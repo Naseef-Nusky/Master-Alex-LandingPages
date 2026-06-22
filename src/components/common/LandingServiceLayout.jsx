@@ -25,7 +25,7 @@ export default function LandingServiceLayout({
   return (
     <LandingLayout>
       <div id="top">
-        <PageBanner title={title} subtitle={subtitle} serviceImage={image} />
+        <PageBanner title={title} subtitle={subtitle} serviceSlug={serviceSlug} />
       </div>
 
       <section id="about" className="section-tint-alt relative px-4 py-24 sm:px-6 lg:py-32">

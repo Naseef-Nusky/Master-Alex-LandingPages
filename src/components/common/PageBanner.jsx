@@ -1,28 +1,26 @@
-import { HERO_BG_IMAGE } from '../../constants/siteData'
+import { HERO_BG_IMAGE, HERO_BG_IMAGES, HERO_BG_MOBILE_POSITION, HERO_TITLES } from '../../constants/siteData'
 import { CallButton, WhatsAppButton } from './Buttons'
 
-export default function PageBanner({ title, subtitle }) {
-  const renderTitle = () => {
-    if (title === 'Black Magic Removal') {
-      return (
-        <>
-          <span className="gold-text-light">Black Magic</span>
-          <br />
-          <span className="text-white">Removal</span>
-        </>
-      )
-    }
-    return title
+export default function PageBanner({ title, subtitle, serviceSlug }) {
+  const heroBg = (serviceSlug && HERO_BG_IMAGES[serviceSlug]) || HERO_BG_IMAGE
+  const mobilePosition =
+    HERO_BG_MOBILE_POSITION[serviceSlug] || HERO_BG_MOBILE_POSITION.default
+  const heroTitle = (serviceSlug && HERO_TITLES[serviceSlug]) || {
+    line1: title,
+    line2: '',
   }
 
   return (
     <section className="relative min-h-screen overflow-hidden pt-36 pb-16 sm:pt-32 lg:pt-32">
-      <img
-        src={HERO_BG_IMAGE}
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
-      />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <img
+          src={heroBg}
+          alt=""
+          aria-hidden
+          className="hero-bg-mobile h-full w-full object-cover object-center"
+          style={{ '--hero-mobile-position': mobilePosition }}
+        />
+      </div>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-master-plum-deep/65 via-master-plum/55 to-master-plum-deep/70" />
 
       <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center px-4 sm:px-6 lg:min-h-[calc(100vh-7rem)]">
@@ -36,8 +34,9 @@ export default function PageBanner({ title, subtitle }) {
             </span>
           </div>
 
-          <h1 className="mb-6 overflow-visible text-5xl leading-[1.2] font-extrabold sm:text-6xl lg:text-7xl">
-            {renderTitle()}
+          <h1 className="hero-title mb-6 overflow-visible text-[2.35rem] leading-[1.15] font-extrabold sm:text-6xl sm:leading-[1.2] lg:text-7xl">
+            <span className="gold-text-light hero-title-line">{heroTitle.line1}</span>
+            <span className="hero-title-line text-white">{heroTitle.line2}</span>
           </h1>
 
           {subtitle && (

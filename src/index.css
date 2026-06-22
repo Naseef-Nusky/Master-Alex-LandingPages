@@ -296,6 +296,17 @@ h4 {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
+.hero-title-line {
+  display: block;
+}
+
+/* Shift hero crop on mobile — show more of the right side of the image */
+@media (max-width: 767px) {
+  .hero-bg-mobile {
+    object-position: var(--hero-mobile-position, 75% center);
+  }
+}
+
 @keyframes services-marquee {
   from {
     transform: translateX(0);
