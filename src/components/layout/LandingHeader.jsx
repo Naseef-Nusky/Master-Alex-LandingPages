@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import { SITE, LOGO } from '../../constants/siteData'
+import { SITE } from '../../constants/siteData'
 import { PhoneIcon, WhatsAppIcon } from '../common/Buttons'
+import LandingLogoLink from '../common/LandingLogoLink'
 
 export default function LandingHeader() {
   const [scrolled, setScrolled] = useState(false)
@@ -20,13 +21,10 @@ export default function LandingHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-2.5 sm:gap-3 sm:px-6 sm:py-3.5">
-        <a href="#top" className="inline-flex shrink-0 transition hover:opacity-90">
-          <img
-            src={LOGO}
-            alt={SITE.name}
-            className="h-20 w-20 object-contain md:h-24 md:w-24"
-          />
-        </a>
+        <LandingLogoLink
+          className="inline-flex shrink-0 transition hover:opacity-90"
+          imageClassName="h-20 w-20 object-contain md:h-24 md:w-24"
+        />
 
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <a

@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
-import { SITE, LOGO } from '../../constants/siteData'
+import { SITE } from '../../constants/siteData'
+import LandingLink from '../common/LandingLink'
+import LandingLogoLink from '../common/LandingLogoLink'
 
 export default function LandingFooter() {
   return (
@@ -9,13 +10,10 @@ export default function LandingFooter() {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:py-16">
         <div className="flex flex-col items-start gap-8 text-left sm:gap-10 md:flex-row md:justify-between lg:gap-12">
           <div className="flex max-w-md flex-col items-start">
-            <a href="#top" className="mb-4 inline-block transition hover:opacity-90 sm:mb-5">
-              <img
-                src={LOGO}
-                alt={SITE.name}
-                className="h-16 w-16 object-contain sm:h-20 sm:w-20 lg:h-24 lg:w-24"
-              />
-            </a>
+            <LandingLogoLink
+              className="mb-4 inline-block transition hover:opacity-90 sm:mb-5"
+              imageClassName="h-16 w-16 object-contain sm:h-20 sm:w-20 lg:h-24 lg:w-24"
+            />
             <p className="text-sm leading-relaxed text-white/55 sm:text-base">
               Trusted spiritual guidance and astrology services in the UK.
             </p>
@@ -74,18 +72,18 @@ export default function LandingFooter() {
             &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </p>
           <div className="flex items-center justify-center gap-4 sm:gap-6">
-            <Link
+            <LandingLink
               to="/privacy-policy"
               className="shrink-0 whitespace-nowrap text-[11px] text-white/40 transition hover:text-white/70 sm:text-xs"
             >
               Privacy Policy
-            </Link>
-            <Link
+            </LandingLink>
+            <LandingLink
               to="/terms-and-conditions"
               className="shrink-0 whitespace-nowrap text-[11px] text-white/40 transition hover:text-white/70 sm:text-xs"
             >
               Terms &amp; Conditions
-            </Link>
+            </LandingLink>
           </div>
         </div>
       </div>
