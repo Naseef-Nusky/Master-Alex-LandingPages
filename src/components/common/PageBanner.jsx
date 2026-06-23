@@ -1,5 +1,5 @@
 import { HERO_BG_IMAGE, HERO_BG_IMAGES, HERO_BG_MOBILE_POSITION, HERO_TITLES } from '../../constants/siteData'
-import { CallButton, WhatsAppButton } from './Buttons'
+import { CallButton } from './Buttons'
 
 export default function PageBanner({ title, subtitle, serviceSlug }) {
   const heroBg = (serviceSlug && HERO_BG_IMAGES[serviceSlug]) || HERO_BG_IMAGE
@@ -49,7 +49,9 @@ export default function PageBanner({ title, subtitle, serviceSlug }) {
 
           <div className="mt-auto flex w-full max-w-md flex-col gap-3 pt-8 md:mt-0 md:max-w-none md:flex-row md:items-center md:pt-0">
             <CallButton variant="primary" className="shadow-lg" />
+            {/* WhatsApp hidden for now — re-enable when ready
             <WhatsAppButton className="!border-master-whatsapp !bg-master-whatsapp !text-white shadow-lg hover:!bg-master-whatsapp/90" />
+            */}
           </div>
         </div>
       </div>

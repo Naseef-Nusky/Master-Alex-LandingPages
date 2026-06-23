@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { SITE } from '../../constants/siteData'
-import { WhatsAppIcon } from './Buttons'
 
 export default function FloatingCta() {
   const [visible, setVisible] = useState(false)
@@ -27,24 +26,15 @@ export default function FloatingCta() {
       }`}
       aria-hidden={!visible}
     >
-      <div className="mx-auto flex w-full max-w-lg gap-2">
+      <div className="mx-auto w-full max-w-lg">
         <a
           href={SITE.phoneLink}
-          className="btn-gold btn-touch flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-xl text-sm font-bold text-master-dark"
+          className="btn-gold btn-touch flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl text-sm font-bold text-master-dark"
           tabIndex={visible ? 0 : -1}
         >
-          Call Now
+          Call {SITE.phone}
         </a>
-        <a
-          href={SITE.whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-touch flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-xl bg-master-whatsapp text-sm font-bold text-white"
-          tabIndex={visible ? 0 : -1}
-        >
-          <WhatsAppIcon className="h-6 w-6" />
-          WhatsApp
-        </a>
+        {/* WhatsApp hidden for now — re-enable when ready */}
       </div>
     </div>
   )

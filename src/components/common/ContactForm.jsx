@@ -1,4 +1,29 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { submitContact } from '../../utils/submitContact'
+import { validateContactForm } from '../../utils/validateContactForm'
+
+function FormField({ label, labelClass, error, children }) {
+  return (
+    <div className="space-y-2">
+      <label className={labelClass}>{label}</label>
+      {children}
+      {error && (
+        <p className="text-sm text-red-600" role="alert">
+          {error}
+        </p>
+      )}
+    </div>
+  )
+}
+
+const EMPTY_FORM = {
+  name: '',
+  email: '',
+  phone: '',
+  message: '',
+  website: '',
+}
 
 export default function ContactForm({
   className = '',
@@ -7,34 +32,70 @@ export default function ContactForm({
   dark = false,
   heading = 'Free Consultation',
   description = "Fill in your details and we'll get back to you within 24 hours.",
+  source = 'landing',
+  page = '',
 }) {
-  const [form, setForm] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  })
+  const navigate = useNavigate()
+  const [form, setForm] = useState(EMPTY_FORM)
+  const [errors, setErrors] = useState({})
+  const [status, setStatus] = useState('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    alert('Thank you! We will contact you shortly.')
-    setForm({ name: '', email: '', phone: '', message: '' })
+  const isLoading = status === 'loading'
+
+  const updateField = (field, value) => {
+    setForm((prev) => ({ ...prev, [field]: value }))
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: '' }))
+    }
+    if (errorMessage) {
+      setErrorMessage('')
+    }
   }
 
-  const inputClass = dark
-    ? 'w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-white placeholder:text-white/30 transition-all focus:border-master-gold/50 focus:bg-white/8 focus:ring-4 focus:ring-master-gold/10 focus:outline-none'
-    : 'w-full rounded-xl border border-gray-200/80 bg-white px-4 py-3.5 text-master-purple transition-all placeholder:text-gray-400 focus:border-master-gold/50 focus:ring-4 focus:ring-master-gold/10 focus:outline-none'
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    if (form.website) return
+
+    const validationErrors = validateContactForm(form)
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
+      setStatus('idle')
+      return
+    }
+
+    setStatus('loading')
+    setErrorMessage('')
+    setErrors({})
+
+    try {
+      await submitContact({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim(),
+        message: form.message.trim(),
+        source,
+        page: page || window.location.pathname,
+      })
+      setForm(EMPTY_FORM)
+      navigate('/thank-you', { replace: true })
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage(error.message)
+    }
+  }
+
+  const inputBase = dark
+    ? 'w-full rounded-xl border bg-white/5 px-4 py-3.5 text-white placeholder:text-white/30 transition-all focus:border-master-gold/50 focus:bg-white/8 focus:ring-4 focus:ring-master-gold/10 focus:outline-none'
+    : 'w-full rounded-xl border bg-white px-4 py-3.5 text-master-purple transition-all placeholder:text-gray-400 focus:border-master-gold/50 focus:ring-4 focus:ring-master-gold/10 focus:outline-none'
+
+  const inputClass = (field) =>
+    `${inputBase} ${errors[field] ? 'border-red-400' : dark ? 'border-white/10' : 'border-gray-200/80'}`
 
   const labelClass = dark ? 'text-sm font-semibold text-white/80' : 'text-sm font-semibold text-master-purple'
 
-  const Field = ({ label, children }) => (
-    <div className="space-y-2">
-      <label className={labelClass}>{label}</label>
-      {children}
-    </div>
-  )
-
-  const formContent = (
+  return (
     <>
       {heading && (
         <div className="mb-6">
@@ -58,66 +119,94 @@ export default function ContactForm({
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className={`space-y-5 ${className}`}>
+      <form onSubmit={handleSubmit} noValidate className={`space-y-5 ${className}`}>
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.website}
+          onChange={(e) => updateField('website', e.target.value)}
+          className="hidden"
+          aria-hidden="true"
+        />
+
         <div className="grid gap-5 sm:grid-cols-2">
           {fields.includes('name') && (
-            <Field label="Full Name">
+            <FormField label="Full Name" labelClass={labelClass} error={errors.name}>
               <input
                 type="text"
+                name="name"
                 placeholder="John Doe"
-                required
+                autoComplete="name"
+                disabled={isLoading}
                 value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className={inputClass}
+                onChange={(e) => updateField('name', e.target.value)}
+                className={inputClass('name')}
+                aria-invalid={Boolean(errors.name)}
               />
-            </Field>
+            </FormField>
           )}
           {fields.includes('email') && (
-            <Field label="Email">
+            <FormField label="Email" labelClass={labelClass} error={errors.email}>
               <input
                 type="email"
+                name="email"
                 placeholder="you@email.com"
-                required
+                autoComplete="email"
+                disabled={isLoading}
                 value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className={inputClass}
+                onChange={(e) => updateField('email', e.target.value)}
+                className={inputClass('email')}
+                aria-invalid={Boolean(errors.email)}
               />
-            </Field>
+            </FormField>
           )}
         </div>
         {fields.includes('phone') && (
-          <Field label="Phone">
+          <FormField label="Phone" labelClass={labelClass} error={errors.phone}>
             <input
               type="tel"
-              placeholder="+44 ..."
-              required
+              name="phone"
+              placeholder="+44 7XXX XXXXXX"
+              autoComplete="tel"
+              disabled={isLoading}
               value={form.phone}
-              onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              className={inputClass}
+              onChange={(e) => updateField('phone', e.target.value)}
+              className={inputClass('phone')}
+              aria-invalid={Boolean(errors.phone)}
             />
-          </Field>
+          </FormField>
         )}
         {fields.includes('message') && (
-          <Field label="Message">
+          <FormField label="Message" labelClass={labelClass} error={errors.message}>
             <textarea
+              name="message"
               placeholder="How can we help you?"
               rows={4}
-              required
+              disabled={isLoading}
               value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className={`${inputClass} resize-none`}
+              onChange={(e) => updateField('message', e.target.value)}
+              className={`${inputClass('message')} resize-none`}
+              aria-invalid={Boolean(errors.message)}
             />
-          </Field>
+          </FormField>
         )}
+
+        {status === 'error' && errorMessage && (
+          <p className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+            {errorMessage}
+          </p>
+        )}
+
         <button
           type="submit"
-          className="btn-gold btn-touch min-h-[48px] w-full rounded-2xl py-3.5 text-base font-bold text-master-dark transition-all active:scale-[0.98] sm:py-4"
+          disabled={isLoading}
+          className="btn-gold btn-touch min-h-[48px] w-full rounded-2xl py-3.5 text-base font-bold text-master-dark transition-all active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70 sm:py-4"
         >
-          {buttonLabel}
+          {isLoading ? 'Sending...' : buttonLabel}
         </button>
       </form>
     </>
   )
-
-  return formContent
 }

@@ -47,8 +47,10 @@ export function CallButton({ className = '', compact = false, variant = 'primary
 }
 
 export function WhatsAppButton({ className = '', compact = false }) {
-  const sizeClass = compact ? 'min-h-[44px] px-4 py-2.5 text-sm' : 'min-h-[48px] px-4 py-3 sm:px-7 sm:py-3.5'
+  // WhatsApp hidden for now — re-enable when ready
+  return null
 
+  /* const sizeClass = compact ? 'min-h-[44px] px-4 py-2.5 text-sm' : 'min-h-[48px] px-4 py-3 sm:px-7 sm:py-3.5'
   return (
     <a
       href={SITE.whatsappLink}
@@ -59,5 +61,5 @@ export function WhatsAppButton({ className = '', compact = false }) {
       <WhatsAppIcon className="h-6 w-6" />
       <span>WhatsApp</span>
     </a>
-  )
+  ) */
 }

@@ -1,10 +1,9 @@
 export const SITE = {
   name: 'Master Alex',
-  phone: '+44 20 1234 5678',
-  phoneLink: 'tel:+442012345678',
-  whatsappLink: 'https://wa.me/442012345678',
-  email: 'info@masteralex.com',
-  address: '123 Spiritual Way, UK',
+  phone: '07503 390362',
+  phoneLink: 'tel:+447503390362',
+  whatsappLink: 'https://wa.me/447503390362', // WhatsApp buttons commented out in UI for now
+  email: 'info@masteralex.co.uk',
 }
 
 export const LOGO = '/logo-removebg.png'

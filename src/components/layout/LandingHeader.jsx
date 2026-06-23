@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { SITE } from '../../constants/siteData'
-import { PhoneIcon, WhatsAppIcon } from '../common/Buttons'
+import { PhoneIcon } from '../common/Buttons'
 import LandingLogoLink from '../common/LandingLogoLink'
 
 export default function LandingHeader() {
@@ -41,6 +41,7 @@ export default function LandingHeader() {
             <PhoneIcon className="h-4 w-4" />
             {SITE.phone}
           </a>
+          {/* WhatsApp hidden for now — re-enable when ready
           <a
             href={SITE.whatsappLink}
             target="_blank"
@@ -50,6 +51,7 @@ export default function LandingHeader() {
             <WhatsAppIcon className="h-6 w-6" />
             WhatsApp
           </a>
+          */}
         </div>
       </div>
     </header>

@@ -58,6 +58,7 @@ export default function LandingServiceLayout({
               <ContactForm
                 heading="Contact Us Now"
                 description="Fill in your details for a free, confidential consultation with Master Alex."
+                page={title}
               />
             </div>
           </div>
@@ -134,7 +135,7 @@ export default function LandingServiceLayout({
                 Reach out today for a confidential consultation. We respond within 24 hours.
               </p>
             </div>
-            <ContactForm heading={null} />
+            <ContactForm heading={null} page={title} />
           </div>
         </section>
       ))}

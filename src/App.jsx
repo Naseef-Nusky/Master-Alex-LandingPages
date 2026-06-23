@@ -4,13 +4,14 @@ import ScrollToTop from './components/common/ScrollToTop'
 import { DEFAULT_LANDING_PATH, LANDING_PAGES } from './constants/landingPages'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsConditions from './pages/TermsConditions'
+import ThankYou from './pages/ThankYou'
 
 function LandingPageEntry({ page }) {
   const Page = page.component
 
   return (
     <>
-      <PageMeta title={page.title} description={page.description} />
+      <PageMeta title={page.title} description={page.description} path={page.path} />
       <Page />
     </>
   )
@@ -31,6 +32,7 @@ export default function App() {
         ))}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
+        <Route path="/thank-you" element={<ThankYou />} />
         <Route path="*" element={<Navigate to={DEFAULT_LANDING_PATH} replace />} />
       </Routes>
     </BrowserRouter>

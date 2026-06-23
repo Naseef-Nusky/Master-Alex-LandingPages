@@ -1,6 +1,9 @@
 {
   "name": "Master Alex — Landing Pages",
   "short_name": "Master Alex",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

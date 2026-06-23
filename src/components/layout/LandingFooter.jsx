@@ -1,4 +1,5 @@
 import { SITE } from '../../constants/siteData'
+import { MAIN_SITE_URL } from '../../constants/siteConfig'
 import LandingLink from '../common/LandingLink'
 import LandingLogoLink from '../common/LandingLogoLink'
 
@@ -32,6 +33,7 @@ export default function LandingFooter() {
                 {SITE.phone}
               </a>
 
+              {/* WhatsApp hidden for now — re-enable when ready
               <a
                 href={SITE.whatsappLink}
                 target="_blank"
@@ -43,6 +45,7 @@ export default function LandingFooter() {
                 </svg>
                 WhatsApp
               </a>
+              */}
 
               <a
                 href={`mailto:${SITE.email}`}
@@ -53,14 +56,6 @@ export default function LandingFooter() {
                 </svg>
                 <span className="break-all">{SITE.email}</span>
               </a>
-
-              <p className="flex items-start justify-start gap-3 px-1 py-1 text-sm leading-relaxed text-white/45">
-                <svg className="mt-0.5 h-4 w-4 shrink-0 text-master-gold-light/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>{SITE.address}</span>
-              </p>
             </div>
           </div>
         </div>
@@ -72,6 +67,14 @@ export default function LandingFooter() {
             &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </p>
           <div className="flex items-center justify-center gap-4 sm:gap-6">
+            {MAIN_SITE_URL && (
+              <a
+                href={MAIN_SITE_URL}
+                className="shrink-0 whitespace-nowrap text-[11px] text-white/40 transition hover:text-white/70 sm:text-xs"
+              >
+                Main Website
+              </a>
+            )}
             <LandingLink
               to="/privacy-policy"
               className="shrink-0 whitespace-nowrap text-[11px] text-white/40 transition hover:text-white/70 sm:text-xs"
