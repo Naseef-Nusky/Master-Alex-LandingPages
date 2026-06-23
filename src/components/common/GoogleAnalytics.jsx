@@ -6,11 +6,18 @@ export default function GoogleAnalytics() {
   const location = useLocation()
 
   useEffect(() => {
-    initGoogleAnalytics()
-  }, [])
+    let cancelled = false
+    const path = `${location.pathname}${location.search}`
 
-  useEffect(() => {
-    trackPageView(`${location.pathname}${location.search}`)
+    initGoogleAnalytics().then(() => {
+      if (!cancelled) {
+        trackPageView(path)
+      }
+    })
+
+    return () => {
+      cancelled = true
+    }
   }, [location.pathname, location.search])
 
   return null

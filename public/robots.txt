@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://services.masteralex.co.uk/sitemap.xml
