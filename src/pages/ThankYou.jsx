@@ -1,11 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import LandingLayout from '../components/layout/LandingLayout'
 import PageMeta from '../components/common/PageMeta'
 import { CallButton } from '../components/common/Buttons'
 import { SITE } from '../constants/siteData'
-import { DEFAULT_LANDING_PATH } from '../constants/landingPages'
+import { getValidLandingReturnPath } from '../constants/landingPages'
 
 export default function ThankYou() {
+  const location = useLocation()
+  const [searchParams] = useSearchParams()
+  const returnPath = getValidLandingReturnPath(location.state?.from || searchParams.get('from'))
   return (
     <LandingLayout>
       <PageMeta
@@ -43,7 +46,7 @@ export default function ThankYou() {
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <CallButton variant="primary" className="shadow-lg" />
             <Link
-              to={DEFAULT_LANDING_PATH}
+              to={returnPath}
               className="inline-flex min-h-[48px] items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-master-gold/40 hover:bg-white/10"
             >
               Back to Services

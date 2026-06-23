@@ -79,7 +79,11 @@ export default function ContactForm({
         page: page || window.location.pathname,
       })
       setForm(EMPTY_FORM)
-      navigate('/thank-you', { replace: true })
+      const returnPath = window.location.pathname
+      navigate(`/thank-you?from=${encodeURIComponent(returnPath)}`, {
+        replace: true,
+        state: { from: returnPath },
+      })
     } catch (error) {
       setStatus('error')
       setErrorMessage(error.message)

@@ -26,4 +26,4 @@ export const LANDING_PAGES = LANDING_ROUTES.map((route) => ({
   component: PAGE_COMPONENTS[route.slug],
 }))
 
-export { DEFAULT_LANDING_PATH, getLandingRouteBySlug as getLandingPageBySlug }
+export { DEFAULT_LANDING_PATH, getLandingRouteBySlug as getLandingPageBySlug, getValidLandingReturnPath } from './landingRoutes'
