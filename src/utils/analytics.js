@@ -1,4 +1,7 @@
-const MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID?.trim()
+import { GA_MEASUREMENT_ID as DEFAULT_MEASUREMENT_ID } from '../constants/analyticsConfig.js'
+
+const MEASUREMENT_ID =
+  import.meta.env.VITE_GA_MEASUREMENT_ID?.trim() || DEFAULT_MEASUREMENT_ID
 
 let initPromise = null
 let isReady = false
@@ -8,8 +11,16 @@ function hasGtag() {
   return typeof window !== 'undefined' && typeof window.gtag === 'function'
 }
 
+function getGtagScript() {
+  return document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}"]`)
+}
+
 export function isGoogleAnalyticsEnabled() {
   return Boolean(MEASUREMENT_ID)
+}
+
+export function getMeasurementId() {
+  return MEASUREMENT_ID
 }
 
 function sendPageView(path) {
@@ -28,6 +39,15 @@ function flushPendingPageViews() {
   }
 }
 
+function markReady() {
+  if (!hasGtag()) return false
+
+  window.gtag('config', MEASUREMENT_ID, { send_page_view: false })
+  isReady = true
+  flushPendingPageViews()
+  return true
+}
+
 export function initGoogleAnalytics() {
   if (!MEASUREMENT_ID || typeof window === 'undefined') {
     return Promise.resolve(false)
@@ -41,20 +61,35 @@ export function initGoogleAnalytics() {
       return
     }
 
-    window.dataLayer = window.dataLayer || []
-    window.gtag = function gtag() {
-      window.dataLayer.push(arguments)
+    const existingScript = getGtagScript()
+
+    if (!hasGtag()) {
+      window.dataLayer = window.dataLayer || []
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments)
+      }
+      window.gtag('js', new Date())
     }
-    window.gtag('js', new Date())
+
+    const onReady = () => {
+      if (markReady()) {
+        resolve(true)
+      } else {
+        resolve(false)
+      }
+    }
+
+    if (existingScript) {
+      onReady()
+      return
+    }
 
     const script = document.createElement('script')
     script.async = true
     script.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`
     script.onload = () => {
-      window.gtag('config', MEASUREMENT_ID, { send_page_view: false })
-      isReady = true
-      flushPendingPageViews()
-      resolve(true)
+      script.setAttribute('data-loaded', 'true')
+      onReady()
     }
     script.onerror = () => {
       console.warn('Google Analytics failed to load. Check ad blockers or network.')
