@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import GoogleAnalytics from './components/common/GoogleAnalytics'
 import PageMeta from './components/common/PageMeta'
 import ScrollToTop from './components/common/ScrollToTop'
 import { DEFAULT_LANDING_PATH, LANDING_PAGES } from './constants/landingPages'
@@ -20,6 +21,7 @@ function LandingPageEntry({ page }) {
 export default function App() {
   return (
     <BrowserRouter>
+      <GoogleAnalytics />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Navigate to={DEFAULT_LANDING_PATH} replace />} />
