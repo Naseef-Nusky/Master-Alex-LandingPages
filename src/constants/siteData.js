@@ -30,9 +30,10 @@ export const HERO_TITLES = {
   'spiritual-healing': { line1: 'Spiritual', line2: 'Healing' },
 }
 
-/** Mobile hero crop focus — shifts visible area on all landing pages */
+/** Mobile hero crop focus — lower % = more left visible; higher % = more right */
 export const HERO_BG_MOBILE_POSITION = {
   default: '75% center',
+  'black-magic-removal': '83% center',
 }
 
 export const SERVICE_LINKS = [
