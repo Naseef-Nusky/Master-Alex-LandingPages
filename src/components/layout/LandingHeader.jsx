@@ -41,17 +41,13 @@ export default function LandingHeader() {
             <PhoneIcon className="h-4 w-4" />
             {SITE.phone}
           </a>
-          {/* WhatsApp hidden for now — re-enable when ready
           <a
-            href={SITE.whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-gold btn-touch inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold text-master-dark sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm"
+            href="/#consultation"
+            className="btn-gold btn-touch inline-flex min-h-[44px] items-center justify-center rounded-xl px-3 py-2 text-xs font-bold text-master-dark sm:px-4 sm:text-sm"
           >
-            <WhatsAppIcon className="h-6 w-6" />
-            WhatsApp
+            <span className="sm:hidden">Book</span>
+            <span className="hidden sm:inline">Free Consultation</span>
           </a>
-          */}
         </div>
       </div>
     </header>

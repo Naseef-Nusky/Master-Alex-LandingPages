@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { FAQS } from '../../constants/siteData'
 
-export default function FaqSection({ items = FAQS }) {
+export default function FaqSection({
+  items = FAQS,
+  description = 'Find answers to common questions about black magic removal and our spiritual healing services.',
+}) {
   const [openIndex, setOpenIndex] = useState(0)
 
   return (
@@ -15,8 +18,7 @@ export default function FaqSection({ items = FAQS }) {
             Frequently Asked Questions
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-base text-master-muted">
-            Find answers to common questions about black magic removal and our spiritual healing
-            services.
+            {description}
           </p>
         </div>
 

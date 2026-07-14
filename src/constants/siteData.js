@@ -37,14 +37,94 @@ export const HERO_BG_MOBILE_POSITION = {
 }
 
 export const SERVICE_LINKS = [
-  { label: 'Black Magic Removal', image: '/black-magic-removal.png', href: '/black-magic-removal' },
-  { label: 'Get Ex Love Back', image: '/get-ex-love-back.png', href: '/get-ex-love-back' },
-  { label: 'Husband & Wife Problem Solutions', image: '/husband-wife-problems.png', href: '/husband-wife-problems' },
-  { label: 'Negative Energy Removal', image: '/negative-energy-removal.png', href: '/negative-energy-removal' },
-  { label: 'Psychic Reading', image: '/psychic-reading.png', href: '/psychic-reading' },
-  { label: 'Love Spell Caster', image: '/love-spell-caster.png', href: '/love-spell-caster' },
-  { label: 'Spiritual Healing', image: '/spiritual-healing.png', href: '/spiritual-healing' },
+  {
+    label: 'Black Magic Removal',
+    image: '/black-magic-removal.png',
+    href: '/black-magic-removal',
+    description:
+      'Remove black magic and negative energies with powerful spiritual healing. Restore peace, success, and happiness through expert psychic guidance and protection rituals.',
+  },
+  {
+    label: 'Get Ex Love Back',
+    image: '/get-ex-love-back.png',
+    href: '/get-ex-love-back',
+    description:
+      'Reunite with your lost love through expert psychic guidance. Heal emotional pain, remove misunderstandings, and rekindle relationships with lasting remedies.',
+  },
+  {
+    label: 'Husband & Wife Problems',
+    image: '/husband-wife-problems.png',
+    href: '/husband-wife-problems',
+    description:
+      'Resolve marriage conflicts, restore trust, and rebuild harmony between partners with personalized astrological remedies and spiritual counselling.',
+  },
+  {
+    label: 'Negative Energy Removal',
+    image: '/negative-energy-removal.png',
+    href: '/negative-energy-removal',
+    description:
+      'Clear invisible negative forces that cause stress, anxiety, and heaviness. Restore balance, peace, and positive energy in your mind, body, and surroundings.',
+  },
+  {
+    label: 'Psychic Reading',
+    image: '/psychic-reading.png',
+    href: '/psychic-reading',
+    description:
+      'Experience accurate psychic readings that reveal insights into love, career, finances, and your future. Gain clarity and solutions with expert spiritual advice.',
+  },
+  {
+    label: 'Love Spell Caster',
+    image: '/love-spell-caster.png',
+    href: '/love-spell-caster',
+    description:
+      'Attract, reunite, and strengthen romantic bonds with ethical love spell guidance. Personalized rituals to restore affection and lasting harmony.',
+  },
+  {
+    label: 'Spiritual Healing',
+    image: '/spiritual-healing.png',
+    href: '/spiritual-healing',
+    description:
+      'Overcome emotional, mental, and spiritual challenges. Restore harmony, inner strength, and positive energy through powerful rituals and remedies.',
+  },
 ]
+
+export const HOME = {
+  tagline: 'Trusted Astrologer & Spiritual Healer in the UK',
+  headlineLine1: 'Restore Peace.',
+  headlineLine2: 'Reclaim Your Life.',
+  intro:
+    "With more than 25 years of practice, Master Alex is among the UK's most trusted spiritual guides. He helps people with black magic concerns, love and marriage issues, psychic readings, and energy healing, offering clear advice and practical remedies for peace and balance.",
+  whyTitle: 'What Makes Master Alex a Trusted Name in the UK',
+  whyIntro:
+    'Across the UK, Master Alex has earned a strong reputation through more than 25 years of skilled guidance, precise readings, and practical help with love, career, and spiritual challenges.',
+  whyChoose: [
+    'Over 25 years of trusted spiritual experience',
+    'Accurate readings and practical remedies',
+    'Online and phone consultations available',
+    'Confidential and respectful guidance',
+    'Personalized approach for every client',
+    'Support across love, career, and spiritual concerns',
+  ],
+  homeFaqs: [
+    {
+      q: 'What services does Master Alex offer?',
+      a: 'Master Alex offers black magic removal, get ex love back, husband and wife problem solutions, negative energy removal, psychic reading, love spell casting, and spiritual healing.',
+    },
+    {
+      q: 'Can I book a consultation remotely?',
+      a: 'Yes. Master Alex offers phone and online consultations across the UK and worldwide, so you can receive effective guidance from anywhere.',
+    },
+    {
+      q: 'How quickly will I get a response?',
+      a: 'After you submit the contact form, Master Alex or his team will typically get back to you within 24 hours.',
+    },
+    {
+      q: 'Is my consultation confidential?',
+      a: 'Yes. All consultations are treated with complete confidentiality and respect for your privacy.',
+    },
+  ],
+}
+
 
 export const BANNER_IMAGES = {
   'black-magic-removal': '/banner-blackmagicremoval.png',

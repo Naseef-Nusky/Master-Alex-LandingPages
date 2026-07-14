@@ -2,7 +2,8 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import GoogleAnalytics from './components/common/GoogleAnalytics'
 import PageMeta from './components/common/PageMeta'
 import ScrollToTop from './components/common/ScrollToTop'
-import { DEFAULT_LANDING_PATH, LANDING_PAGES } from './constants/landingPages'
+import { LANDING_PAGES } from './constants/landingPages'
+import Home from './pages/Home'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsConditions from './pages/TermsConditions'
 import ThankYou from './pages/ThankYou'
@@ -24,7 +25,19 @@ export default function App() {
       <GoogleAnalytics />
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Navigate to={DEFAULT_LANDING_PATH} replace />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <PageMeta
+                title="Master Alex | Trusted Spiritual Services UK"
+                description="Master Alex offers black magic removal, love solutions, psychic reading, and spiritual healing across the UK. Book a free consultation today."
+                path="/"
+              />
+              <Home />
+            </>
+          }
+        />
         {LANDING_PAGES.map((page) => (
           <Route
             key={page.slug}
@@ -35,7 +48,7 @@ export default function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsConditions />} />
         <Route path="/thank-you" element={<ThankYou />} />
-        <Route path="*" element={<Navigate to={DEFAULT_LANDING_PATH} replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   )

@@ -57,11 +57,12 @@ export function getLandingRouteBySlug(slug) {
 }
 
 export function getValidLandingReturnPath(path) {
-  if (!path || typeof path !== 'string') return DEFAULT_LANDING_PATH
+  if (!path || typeof path !== 'string') return '/'
 
   const normalized = path.split('?')[0].split('#')[0]
-  if (!normalized.startsWith('/')) return DEFAULT_LANDING_PATH
+  if (normalized === '/') return '/'
+  if (!normalized.startsWith('/')) return '/'
 
   const isValid = LANDING_ROUTES.some((route) => route.path === normalized)
-  return isValid ? normalized : DEFAULT_LANDING_PATH
+  return isValid ? normalized : '/'
 }
