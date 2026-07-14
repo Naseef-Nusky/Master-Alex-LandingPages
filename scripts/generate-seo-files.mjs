@@ -31,6 +31,7 @@ function readSiteUrl() {
 
 const siteUrl = readSiteUrl()
 const paths = [
+  '/',
   ...LANDING_ROUTES.map((page) => page.path),
   '/privacy-policy',
   '/terms-and-conditions',
@@ -42,8 +43,8 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${paths
   .map((pagePath) => {
-    const loc = siteUrl ? `${siteUrl}${pagePath}` : pagePath
-    const priority = pagePath === DEFAULT_LANDING_PATH ? '1.0' : '0.8'
+    const loc = siteUrl ? `${siteUrl}${pagePath === '/' ? '/' : pagePath}` : pagePath
+    const priority = pagePath === '/' ? '1.0' : '0.8'
     return `  <url>
     <loc>${loc}</loc>
     <lastmod>${today}</lastmod>
