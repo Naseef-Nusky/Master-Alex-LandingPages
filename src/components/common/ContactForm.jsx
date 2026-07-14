@@ -141,7 +141,7 @@ export default function ContactForm({
               <input
                 type="text"
                 name="name"
-                placeholder="John Doe"
+                placeholder="Simon"
                 autoComplete="name"
                 disabled={isLoading}
                 value={form.name}
@@ -172,7 +172,7 @@ export default function ContactForm({
             <input
               type="tel"
               name="phone"
-              placeholder="+44 7XXX XXXXXX"
+              placeholder="+44"
               autoComplete="tel"
               disabled={isLoading}
               value={form.phone}
