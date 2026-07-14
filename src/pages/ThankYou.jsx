@@ -9,6 +9,8 @@ export default function ThankYou() {
   const location = useLocation()
   const [searchParams] = useSearchParams()
   const returnPath = getValidLandingReturnPath(location.state?.from || searchParams.get('from'))
+  const fromHome = returnPath === '/'
+
   return (
     <LandingLayout>
       <PageMeta
@@ -45,18 +47,29 @@ export default function ThankYou() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
             <CallButton variant="primary" className="shadow-lg" />
-            <Link
-              to={returnPath}
-              className="inline-flex min-h-[48px] items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-master-gold/40 hover:bg-white/10"
-            >
-              Back to Service
-            </Link>
-            <Link
-              to="/"
-              className="inline-flex min-h-[48px] items-center justify-center rounded-2xl border border-master-gold/40 bg-master-gold/15 px-6 py-3 text-sm font-semibold text-master-gold-light transition hover:bg-master-gold/25"
-            >
-              Back to All Services
-            </Link>
+            {fromHome ? (
+              <Link
+                to="/"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-2xl border border-master-gold/40 bg-master-gold/15 px-6 py-3 text-sm font-semibold text-master-gold-light transition hover:bg-master-gold/25"
+              >
+                Back to All Services
+              </Link>
+            ) : (
+              <>
+                <Link
+                  to={returnPath}
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-master-gold/40 hover:bg-white/10"
+                >
+                  Back to Service
+                </Link>
+                <Link
+                  to="/"
+                  className="inline-flex min-h-[48px] items-center justify-center rounded-2xl border border-master-gold/40 bg-master-gold/15 px-6 py-3 text-sm font-semibold text-master-gold-light transition hover:bg-master-gold/25"
+                >
+                  Back to All Services
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </section>
